@@ -1,0 +1,5 @@
+channels:
+        - bioconda
+        - conda-forge
+dependencies:
+        - HTSeq =2.0

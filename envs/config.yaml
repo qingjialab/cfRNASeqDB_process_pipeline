@@ -1,0 +1,48 @@
+study1:
+        name: study1
+        single_route: RNA_list/study1_single.txt
+        paired_route: RNA_list/study1_paired.txt
+        length: 27
+study2:
+        name: study2
+        route: RNA_list/study2.txt
+        length: 75
+study3:
+        name: study3
+        route: RNA_list/study3.txt
+        length: 75
+study4:
+        name: study4
+        route: RNA_list/study4.txt
+        length: 150
+study5:
+        name: study5
+        route: RNA_list/study5.txt
+        length: 75
+study6:
+        name: study6
+        route: RNA_list/study6.txt
+        length: 101
+study7:
+        name: study7
+        route: RNA_list/study7.txt
+        length: 75
+study8:
+        name: study8
+        route: RNA_list/study9.exon.txt
+        length: 75
+STAR_index:
+        /home/yulinliu/biolib/STAR_default
+ref_genome:
+        /home/yulinliu/biolib/Ensembl_release_105/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+ref_gtf:
+        /home/yulinliu/biolib/Ensembl_release_105/Homo_sapiens.GRCh38.105.gtf
+bed:
+        /bigData/qiyanli/biolib/hg38_RefSeq_nochr.bed
+#taxonomy:
+#       /bigData/qiyanli/project/cfRNA_Database/practice/data/classification_for_microbiome.txt
+
+kraken_database:
+        bacteria: /home/qiyanli/biolib/bacteria
+        virus: /home/qiyanli/biolib/viral
+
