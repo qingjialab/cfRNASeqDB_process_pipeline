@@ -37,7 +37,6 @@ rule all:
 #		expand(RESULT_DIR + "BAM_filter/{sample}_BAM_filter.bam",sample=samples),
 #               expand(RESULT_DIR + "BAM_filter/{sample}_BAM_filter.bam.bai",sample=samples),
 		expand(RESULT_DIR+"htseq_count/{sample}.count",sample=samples),
-		expand(RESULT_DIR + "htseq_count_exon/{sample}.count",sample=samples),
 		RESULT_DIR+"rRNA_percentage/rRNA_rate.csv"
 		expand(RESULT_DIR + "bracken_estimation/{sample}_{type}_{level}.{ext}", ext=["bracken","breport","mpa.txt"], sample=samples, level=LEVEL, type=TYPE),
 		expand(RESULT_DIR + "combine_result/{type}_{level}.{ext}", ext=["bracken.txt","mpa.txt"], level=LEVEL, type=TYPE)
