@@ -22,15 +22,23 @@ study5:
 study6:
         name: study6
         route: RNA_list/study6.txt
-        length: 101
+        length: 150
 study7:
         name: study7
         route: RNA_list/study7.txt
-        length: 75
+        length: 101
 study8:
         name: study8
         route: RNA_list/study9.exon.txt
         length: 75
+study9:
+        name: study9
+        route: RNA_list/study9.txt
+        length: 75
+study10:
+        name: study10
+        route: RNA_list/study10.txt
+        length: 150
 STAR_index:
         /home/yulinliu/biolib/STAR_default
 ref_genome:
