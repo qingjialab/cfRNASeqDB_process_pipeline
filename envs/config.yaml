@@ -2,7 +2,7 @@ study1:
         name: study1
         single_route: RNA_list/study1_single.txt
         paired_route: RNA_list/study1_paired.txt
-        length: 27
+        length: 36
 study2:
         name: study2
         route: RNA_list/study2.txt
