@@ -261,6 +261,9 @@ rule Reads_count:
 	priority: 14
 	shell:
 		"(htseq-count  -f bam -r pos -s no -a 10 -t exon -i gene_id -m union --nonunique=none {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s yes -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s reverse -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+
 
 rule Exon_number:
 	input:
@@ -280,6 +283,8 @@ rule Exon_number:
 	priority: 14
 	shell:
 		"(htseq-count  -f bam -r pos -s no -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output} ) &>{log}"
+#		"(htseq-count  -f bam -r pos -s yes -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s reverse -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
 
 
 rule RNA_degrade:
