@@ -281,6 +281,16 @@ rule Exon_number:
 	priority: 14
 	shell:
 		"(htseq-count  -f bam -r pos -s no -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s yes -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s reverse -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+
+rule RNA_degrade:
+	input:
+		expand(RESULT_DIR + "htseq_count_exon/{sample}.count",sample=samples)
+	output:
+		RESULT_DIR + "RNA_degradation/degrate_genes.csv"
+	script:
+		"scripts/RNA_degradation.R"
 
 
 rule Reads_count:
@@ -301,6 +311,8 @@ rule Reads_count:
 	priority: 14
 	shell:
 		"(htseq-count  -f bam -r pos -s no -a 10 -t exon -i gene_id -m union --nonunique=none {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s yes -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
+#		"(htseq-count  -f bam -r pos -s reverse -a 10 -t exon -i gene_id -i exon_number -m union --nonunique=none --additional-attr=gene_name --additional-attr=exon_number {input.bam} {input.gtf} > {output}) &>{log}"
 
 
 rule rRNA_ percentage:
@@ -310,8 +322,7 @@ rule rRNA_ percentage:
 		RESULT_DIR + "rRNA_percentage/rRNA_rate.csv"
 	script:
 		"scripts/rRNA_percentage.R"
-
-
+		
 rule Kraken2_classify:
 	input:
 		fq1 = RESULT_DIR + "star_align/{sample}_Unmapped.out.mate1",
